@@ -533,8 +533,8 @@ static int dwapb_gpio_add_port(struct dwapb_gpio *gpio,
 		port->gc.set_config = dwapb_gpio_set_config;
 
 	/* Only port A can provide interrupts in all configurations of the IP */
-	if (pp->idx == 0)
-		dwapb_configure_irqs(gpio, port, pp);
+	//if (pp->idx == 0)
+	//	dwapb_configure_irqs(gpio, port, pp);
 
 	err = devm_gpiochip_add_data(gpio->dev, &port->gc, port);
 	if (err) {
@@ -697,7 +697,6 @@ static int dwapb_gpio_probe(struct platform_device *pdev)
 	int err;
 	struct dwapb_platform_data *pdata;
 	struct device *dev = &pdev->dev;
-
 	pdata = dwapb_gpio_get_pdata(dev);
 	if (IS_ERR(pdata))
 		return PTR_ERR(pdata);

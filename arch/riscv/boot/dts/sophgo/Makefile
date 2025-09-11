@@ -5,3 +5,4 @@ dtb-$(CONFIG_ARCH_SOPHGO) += mango-sophgo-pisces.dtb
 dtb-$(CONFIG_ARCH_SOPHGO) += mango-sophgo-x4evb.dtb
 dtb-$(CONFIG_ARCH_SOPHGO) += mango-yixin-s2110.dtb
 dtb-$(CONFIG_ARCH_SOPHGO) += mango-sophgo-capricorn.dtb
+dtb-$(CONFIG_ARCH_SOPHGO) += mango-sophgo-sra21.dtb

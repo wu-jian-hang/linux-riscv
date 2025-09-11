@@ -322,8 +322,6 @@ static int recv_data(struct tpm_chip *chip, u8 *buf, size_t count)
 
 		rc = tpm_tis_read_bytes(priv, TPM_DATA_FIFO(priv->locality),
 					burstcnt, buf + size);
-		if (rc < 0)
-			return rc;
 
 		size += burstcnt;
 	}
@@ -421,8 +419,6 @@ static int tpm_tis_send_data(struct tpm_chip *chip, const u8 *buf, size_t len)
 		burstcnt = min_t(int, burstcnt, len - count - 1);
 		rc = tpm_tis_write_bytes(priv, TPM_DATA_FIFO(priv->locality),
 					 burstcnt, buf + count);
-		if (rc < 0)
-			goto out_err;
 
 		count += burstcnt;
 

@@ -20,6 +20,8 @@
 #include <linux/property.h>
 #include <linux/regmap.h>
 #include <linux/reset.h>
+#include <linux/gpio/consumer.h>
+#include "../gpio/gpiolib.h"
 
 #include "spi-dw.h"
 
@@ -31,6 +33,7 @@ struct dw_spi_mmio {
 	struct clk     *pclk;
 	void           *priv;
 	struct reset_control *rstc;
+	struct gpio_desc     *excs;
 };
 
 #define MSCC_CPU_SYSTEM_CTRL_GENERAL_CTRL	0x24
